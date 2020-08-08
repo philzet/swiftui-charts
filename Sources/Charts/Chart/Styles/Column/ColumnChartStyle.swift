@@ -3,6 +3,8 @@ import Shapes
 
 public class SharedState: ObservableObject {
     @Published var activeText: String = ""
+    
+    public init() {}
 }
 
 @available(iOS 13.4, *)
