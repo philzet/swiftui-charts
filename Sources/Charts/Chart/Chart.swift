@@ -17,11 +17,11 @@ extension Chart {
 }
 
 extension Chart {
-    public init<Data: RandomAccessCollection>(data: Data) where Data.Element : BinaryFloatingPoint {
-        self.init(ChartStyleConfiguration(dataMatrix: data.map { [CGFloat($0)] }))
+    public init<Data: RandomAccessCollection>(data: Data, labels: [String]) where Data.Element : BinaryFloatingPoint {
+        self.init(ChartStyleConfiguration(dataMatrix: data.map { [CGFloat($0)] }, dataLabels: labels))
     }
     
-    public init<Data: RandomAccessCollection>(data: [Data]) where Data.Element : BinaryFloatingPoint {
-        self.init(ChartStyleConfiguration(dataMatrix: data.map({ $0.map { CGFloat($0) } })))
+    public init<Data: RandomAccessCollection>(data: [Data], labels: [String]) where Data.Element : BinaryFloatingPoint {
+        self.init(ChartStyleConfiguration(dataMatrix: data.map({ $0.map { CGFloat($0) } }), dataLabels: labels))
     }
 }
