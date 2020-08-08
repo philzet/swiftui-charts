@@ -1,7 +1,7 @@
 import SwiftUI
 import Shapes
 
-public class SharedState: ObservableObject {
+open class SharedState: ObservableObject {
     @Published var activeText: String = ""
     
     public init() {}
